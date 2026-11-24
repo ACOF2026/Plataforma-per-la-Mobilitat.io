@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Manifest pel Dret a la Mobilitat. Suma't a la defensa d'una mobilitat accessible per a tothom.">
+  <title>Manifest pel Dret a la Mobilitat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap 5.3.9 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <!-- LOGO / INICIO -->
+      <a class="brand" href="#inici" aria-label="Tornar a l'inici">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        <span>
+          PLATAFORMA PEL<br>
+          <strong>DRET A LA MOBILITAT</strong>
+        </span>
+      </a>
+
+      <!-- BOTÓN MÓVIL -->
+      <button class="menu-toggle" type="button" aria-label="Obrir el menú" aria-expanded="false"
+        aria-controls="main-navigation">
+        ☰
+      </button>
+
+      <!-- NAVEGACIÓN -->
+      <nav class="main-nav" id="main-navigation" aria-label="Navegació principal">
+
+        <a href="#manifest">El manifest</a>
+
+        <a href="#adhesions-llistat">Adhesions</a>
+
+        <a href="#per-que">Per què sumar-s'hi?</a>
+
+        <a class="nav-cta" href="#adhereix">
+          Adhereix-t'hi <span>↗</span>
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="hero" id="inici">
+      <div class="hero-shape shape-one"></div>
+      <div class="hero-shape shape-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Una iniciativa col·lectiva</span>
+          <h1>Garantir la mobilitat és <em>garantir drets.</em></h1>
+          <p class="hero-lead">La mobilitat és una condició imprescindible per accedir a la salut, l'educació, la
+            formació, l'ocupació i els recursos essencials de la ciutat.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#adhereix">Suma-t'hi ara <span>→</span></a>
+            <a class="text-link" href="#manifest">Llegeix el manifest <span>↓</span></a>
+          </div>
+          <div class="hero-note"><span class="note-line"></span><span>Cap persona hauria de quedar exclosa per motius
+              econòmics.</span></div>
+        </div>
+        <div class="hero-art" aria-label="Il·lustració conceptual de mobilitat i connexió">
+          <div class="art-orbit orbit-a"></div>
+          <div class="art-orbit orbit-b"></div>
+          <div class="art-card">
+            <div class="art-card-top"><span>EL DRET A ARRIBAR</span><span class="art-cross">✳</span></div>
+            <div class="route-map">
+              <svg viewBox="0 0 430 300" role="img" aria-label="Línies que connecten diferents punts de la ciutat">
+                <path class="route route-back" d="M28 224 C90 224 75 70 165 92 S235 230 300 182 S365 72 405 54" />
+                <path class="route route-front" d="M28 224 C90 224 75 70 165 92 S235 230 300 182 S365 72 405 54" />
+                <path class="route route-alt" d="M165 92 C180 25 260 20 280 76 S275 150 300 182" />
+                <circle class="stop stop-a" cx="28" cy="224" r="10" />
+                <circle class="stop stop-b" cx="165" cy="92" r="10" />
+                <circle class="stop stop-c" cx="300" cy="182" r="10" />
+                <circle class="stop stop-d" cx="405" cy="54" r="10" />
+                <circle class="stop-core" cx="28" cy="224" r="3" />
+                <circle class="stop-core" cx="165" cy="92" r="3" />
+                <circle class="stop-core" cx="300" cy="182" r="3" />
+                <circle class="stop-core" cx="405" cy="54" r="3" />
+              </svg>
+              <span class="map-label label-a">COMUNITAT</span><span class="map-label label-b">OPORTUNITATS</span>
+              <span class="map-label label-c">DRETS</span>
+            </div>
+            <div class="art-card-bottom"><span class="pulse"></span> Una ciutat accessible és una ciutat per a tothom.
+            </div>
+          </div>
+          <div class="floating-tag tag-top">MOBILITAT <b>≠</b> PRIVILEGI</div>
+          <div class="floating-tag tag-bottom"><span>↗</span> Drets per a tothom</div>
+        </div>
+      </div>
+      <div class="container hero-bottom"><span>PLATAFORMA PEL DRET A LA MOBILITAT</span><span>BARCELONA ·
+          CATALUNYA</span></div>
+    </section>
+
+    <!-- CONTADOR -->
+    <section class="counter-section" id="adhesions-comptador">
+      <div class="section-heading">
+        <span class="eyebrow">UNA REIVINDICACIÓ QUE CREIX</span>
+        <h2> cada adhesió compta.</h2>
+        <p>Veus que defensen el dret a la mobilitat.</p>
+      </div>
+      <div class="counter-grid" id="counter">
+        <article class="counter-card"><span class="counter-number" id="count-entitats"></span><span
+            class="counter-label">Entitats</span><small>Adherides al manifest</small></article>
+        <article class="counter-card"><span class="counter-number" id="count-persones"></span><span
+            class="counter-label">Persones</span><small>Adherides individualment</small></article>
+        <article class="counter-card counter-total"><span class="counter-number" id="count-total"></span><span
+            class="counter-label">Adhesions totals</span><small>Adhesions confirmades</small></article>
+      </div>
+    </section>
+
+    <section class="manifest-section section-pad" id="manifest">
+      <div class="container manifest-layout">
+        <aside class="section-aside"><span class="eyebrow">01 / El document</span>
+          <div class="aside-rule"></div>
+          <p>Un manifest obert a la participació i a la construcció col·lectiva.</p><a class="download-link"
+            href="#manifest" onclick="window.print(); return false;">Descarrega / Imprimeix <span>↓</span></a>
+        </aside>
+        <div class="manifest-content">
+          <span class="pill">Manifest pel Dret a la Mobilitat</span>
+          <h2>Garantir la mobilitat és <em>garantir drets.</em></h2>
+          <p class="manifest-intro">Impulsat per la Plataforma pel Dret a la Mobilitat</p>
+          <div class="draft-notice"><span>✳</span>
+            <p>Aquest és un primer esborrany obert a aportacions. La voluntat és que totes les entitats que s'hi
+              adhereixin puguin participar en la seva construcció abans d'aprovar-ne la versió definitiva.</p>
+          </div>
+
+          <article class="manifest-block">
+            <span class="block-number">01</span>
+            <div>
+              <h3>Garantir la mobilitat és garantir drets</h3>
+              <p>La mobilitat és una condició imprescindible per accedir a drets tan bàsics com la salut, l'alimentació,
+                la formació, l'ocupació, l'habitatge o la participació comunitària. Les entitats que impulsem aquest
+                manifest acompanyem diàriament persones que necessiten desplaçar-se per la ciutat per accedir a recursos
+                essencials, com ara menjadors socials, albergs, serveis d'higiene, cites amb els serveis socials o
+                altres recursos d'atenció, així com per realitzar tràmits administratius, assistir a cursos de llengua o
+                formació i participar en itineraris d'inserció sociolaboral. Quan el cost del transport públic esdevé
+                una barrera, també ho fa l'accés efectiu a aquests drets.</p>
+              <p>Les entitats que impulsem aquest manifest coneixem aquesta realitat perquè treballem diàriament amb
+                persones migrants, especialment nouvingudes, en processos d'acollida i inclusió social. Observem com el
+                cost dels desplaçaments condiciona les seves oportunitats i dificulta els seus itineraris d'autonomia.
+              </p>
+              <p>Tanmateix, aquesta realitat no afecta exclusivament les persones migrants. També impacta moltes altres
+                persones que troben dificultats econòmiques per accedir al transport públic i que, per aquest motiu,
+                veuen limitat l'accés als recursos essencials de la ciutat.</p>
+              <p>Per aquest motiu impulsem la Plataforma pel Dret a la Mobilitat, un espai de treball compartit entre
+                entitats compromeses amb la defensa dels drets, la igualtat d'oportunitats i la inclusió social.</p>
+            </div>
+          </article>
+          <article class="manifest-block">
+            <span class="block-number">02</span>
+            <div>
+              <h3>La mobilitat, una condició per a l'accés als serveis</h3>
+              <p>A la ciutat existeixen serveis i programes d'acollida, salut, educació, ocupació, inclusió social i
+                acompanyament que tenen com a objectiu facilitar l'accés als drets i generar oportunitats.</p>
+              <p>Perquè aquests recursos siguin realment accessibles, però, cal que les persones hi puguin arribar.</p>
+              <p>Quan el cost del transport públic impedeix accedir a aquests recursos, es crea una barrera que
+                dificulta l'exercici dels drets i limita l'accessibilitat a aquests serveis.</p>
+              <p>Garantir la mobilitat permet fer accessibles els recursos bàsics i essencials per a les persones que
+                els necessiten.</p>
+            </div>
+          </article>
+          <article class="manifest-block">
+            <span class="block-number">03</span>
+            <div>
+              <h3>Els objectius de la Plataforma</h3>
+              <p>La Plataforma pel Dret a la Mobilitat neix amb la voluntat de:</p>
+              <ul class="manifest-list">
+                <li>Reivindicar la mobilitat com un dret essencial i una condició necessària per garantir l'exercici
+                  efectiu d'altres drets.</li>
+                <li>Visibilitzar l'impacte que tenen les barreres econòmiques de mobilitat sobre els processos
+                  d'acollida, inclusió social i autonomia personal.</li>
+                <li>Elaborar una proposta col·lectiva, rigorosa i basada en evidències que contribueixi a millorar
+                  l'accessibilitat als recursos i a impulsar polítiques públiques més equitatives i inclusives.</li>
+                <li>Enfortir el treball en xarxa entre les entitats per construir una veu compartida i representativa.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="manifest-block">
+            <span class="block-number">04</span>
+            <div>
+              <h3>El nostre comprom</h3>
+              <p>Volem construir aquesta proposta de manera col·lectiva.</p>
+              <p>Per això impulsem un procés participatiu entre les entitats per compartir experiències, identificar
+                necessitats, recollir dades i elaborar una diagnosi compartida que permeti dimensionar aquesta realitat.
+              </p>
+              <p>Aquest treball permetrà elaborar una proposta sòlida, representativa i fonamentada per traslladar a les
+                administracions i entitats competents, amb l'objectiu d'impulsar mesures que garanteixin una mobilitat
+                accessible per a les persones que més ho necessiten.</p>
+              <p>Entre les possibles actuacions, plantegem la creació d'un sistema de suport al transport —com ara
+                targetes bonificades—, sense excloure altres fórmules que permetin eliminar aquestes barreres i garantir
+                una accessibilitat real als recursos de la ciutat.</p>
+            </div>
+          </article>
+          <article class="manifest-block">
+            <span class="block-number">05</span>
+            <div>
+              <h3>Una invitació a sumar esforços</h3>
+              <p>Convidem totes les entitats que treballen en l'àmbit de l'acollida, la inclusió social, la defensa dels
+                drets, l'acció comunitària i l'acompanyament a persones que troben dificultats per accedir als recursos
+                de la ciutat a adherir-se a aquest manifest i a formar part de la Plataforma pel Dret a la Mobilitat.
+              </p>
+              <p>Aquest és un document viu. Volem construir-lo incorporant les aportacions de les entitats que s'hi
+                sumin, perquè estem convençudes que una proposta elaborada entre totes serà més representativa, més
+                sòlida i tindrà una major capacitat d'incidència.</p>
+              <p>Aspirem a sumar les veus de les entitats per situar el dret a la mobilitat en el centre de l'agenda
+                pública i promoure mesures que garanteixin que cap persona quedi exclosa dels recursos essencials per
+                motius econòmics.</p>
+            </div>
+          </article>
+          <div class="manifest-quote"><span>“</span>
+            <p>Perquè una ciutat inclusiva no és només la que ofereix serveis. És la que garanteix que totes les
+              persones hi puguin accedir.</p><strong>Garantir la mobilitat és garantir drets.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="why-section section-pad" id="per-que">
+      <div class="container why-grid">
+        <div class="why-title"><span class="eyebrow">02 / Per què ens adherim?</span>
+          <h2>Arribar als serveis també és <em>un dret.</em></h2>
+          <p>Quan el cost del transport públic esdevé una barrera, l'accés als drets també queda limitat.</p><a
+            class="button button-light" href="#adhereix">Vull sumar-m'hi <span>→</span></a>
+        </div>
+        <div class="why-points">
+          <div class="why-point"><span>01</span>
+            <div>
+              <h3>Accés als drets</h3>
+              <p>La mobilitat fa possible arribar a serveis de salut, educació, ocupació, habitatge i atenció social.
+              </p>
+            </div>
+          </div>
+          <div class="why-point"><span>02</span>
+            <div>
+              <h3>Igualtat d'oportunitats</h3>
+              <p>Eliminar les barreres econòmiques ajuda a garantir que tothom pugui participar en la vida de la ciutat.
+              </p>
+            </div>
+          </div>
+          <div class="why-point"><span>03</span>
+            <div>
+              <h3>Una veu compartida</h3>
+              <p>La força de les entitats i de les persones pot impulsar una proposta col·lectiva i polítiques més
+                equitatives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="allies-section section-pad">
+      <div class="container allies-inner">
+
+        <div>
+          <span class="eyebrow">Una xarxa que suma</span>
+          <h2>Impulsat per i amb <em>les entitats.</em></h2>
+          <p>
+            La Plataforma vol construir una veu compartida entre entitats
+            compromeses amb els drets, la igualtat d'oportunitats
+            i la inclusió social.
+          </p>
+        </div>
+
+        <div class="allies-logos">
+
+          <div class="allies-logo-item">
+            <img src="./img/Coordinadora De La Llengua - 1.png" alt="Coordinadora de la Llengua">
+          </div>
+
+          <div class="allies-logo-item">
+            <img src="./img/Xarxa d'acompanyament.png" alt="Xarxa d'acompanyament">
+          </div>
+
+          <p>
+            Manifest impulsat per la Xarxa d'entitats de la
+            Coordinadora de la Llengua de Barcelona.
+          </p>
+
+          <a href="#manifest" class="text-link">
+            La teva entitat també hi pot ser <span>↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="adhesion-section section-pad" id="adhereix">
+      <div class="container adhesion-wrap">
+        <div class="join-intro">
+          <span class="eyebrow">03 / Adhesió</span>
+          <h2>La mobilitat és un dret. <em>Fem-lo possible.</em></h2>
+          <p>Adhereix-te al manifest i ajuda'ns a fer créixer aquesta reivindicació col·lectiva.</p>
+          <div class="join-assurance"><span>✓</span>
+            <p>Procés breu i accessible. Només demanem les dades imprescindibles per gestionar l'adhesió.</p>
+          </div>
+          <div class="join-assurance"><span>✓</span>
+            <p>Pots decidir si vols que el teu nom o el de la teva entitat aparegui públicament.</p>
+          </div>
+        </div>
+
+        <div class="adhesion-choice">
+          <div class="form-heading"><span class="pill">Suma la teva veu</span>
+            <h3>Adhereix-te al manifest</h3>
+            <p>Tria com vols donar suport a la iniciativa.</p>
+          </div>
+
+          <!-- FORMULARIO -->
+          <fieldset class="type-select">
+            <legend>Com vols adherir-t'hi?</legend>
+            <label class="choice-card"><input type="radio" name="adhesion-type" value="entity"
+                checked><span><strong>Entitat</strong><small>Adhesió en nom d'una organització</small></span></label>
+            <label class="choice-card"><input type="radio" name="adhesion-type" value="individual"><span><strong>Persona
+                  individual</strong><small>Adhesió a títol personal</small></span></label>
+          </fieldset>
+
+          <form class="adhesion-form" id="entity-form" method="post">
+            <h3>Adhesió d'una entitat</h3>
+            <div class="form-grid">
+              <label>Nom de l'entitat <span>*</span><input name="entity_name" type="text" autocomplete="organization"
+                  required></label>
+              <label>Nom i cognoms de la persona representant <span>*</span><input name="representative" type="text"
+                  autocomplete="name" required></label>
+              <label>Càrrec o vinculació amb l'entitat <span>*</span><input name="role" type="text" required></label>
+              <label>Correu electrònic de contacte <span>*</span><input name="email" type="email" autocomplete="email"
+                  required></label>
+              <label>Municipi<input name="municipality" type="text" autocomplete="address-level2"></label>
+              <label>Àmbit d'actuació <small class="optional">(opcional)</small>
+                <select name="ambit">
+                  <option value="">Selecciona un àmbit</option>
+                  <option>Acollida i migracions</option>
+                  <option>Inclusió social</option>
+                  <option>Defensa dels drets</option>
+                  <option>Acció comunitària</option>
+                  <option>Educació i formació</option>
+                  <option>Inserció sociolaboral</option>
+                  <option>Altres</option>
+                </select>
+              </label>
+            </div>
+            <fieldset class="visibility-fields">
+              <legend>Visibilitat de l'adhesió</legend>
+              <p>Vols que el teu nom o el de la teva entitat aparegui públicament al web?</p>
+              <label class="radio-line"><input type="radio" name="visibilitat_entitat" value="publica" checked> Sí, vull
+                que aparegui públicament.</label>
+              <label class="radio-line"><input type="radio" name="visibilitat_entitat" value="privada"> No, prefereixo
+                que l'adhesió sigui privada.</label>
+            </fieldset>
+            <label class="consent"><input type="checkbox" name="privacitat" required><span>Confirmo que m'adhereixo al
+                manifest i accepto la <a href="politica-privacitat.html">política de privacitat</a>.
+                <b>*</b></span></label>
+            <button class="button button-dark submit-button" type="submit">Enviar la meva adhesió
+              <span>→</span></button>
+            <p class="form-legal">* Camps obligatoris. Enviant aquest formulari acceptes que les dades s'utilitzin per
+              gestionar la teva adhesió.</p>
+            <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+          </form>
+
+
+          <form class="adhesion-form" id="individual-form" hidden method="post">
+            <h3>Adhesió individual</h3>
+            <div class="form-grid">
+              <label>Nom i cognoms <span>*</span><input name="full_name" type="text" autocomplete="name"
+                  required></label>
+              <label>Correu electrònic <span>*</span><input name="email" type="email" autocomplete="email"
+                  required></label>
+              <label>Municipi<input name="municipality" type="text" autocomplete="address-level2"></label>
+            </div>
+            <fieldset class="visibility-field">
+              <legend>Com vols que aparegui la teva adhesió? <span>*</span></legend>
+              <label class="check-option"><input type="radio" name="visibilitat_individual" value="public" required>
+                Vull que el meu nom aparegui públicament entre les adhesions individuals.</label>
+              <label class="check-option"><input type="radio" name="visibilitat_individual" value="private" required>
+                Prefereixo que la meva adhesió sigui privada.</label>
+            </fieldset>
+            <label class="consent-option"><input type="checkbox" name="privacy_individual" required> He llegit la <a
+                href="politica-privacitat.html">política de privacitat</a> i accepto el tractament de les dades per
+              gestionar l'adhesió. <span>*</span></label>
+            <button class="button button-dark form-submit" type="submit">Enviar adhesió <span>→</span></button>
+            <p class="form-legal">* Camps obligatoris. Les dades s'utilitzaran per gestionar l'adhesió.</p>
+            <div class="form-message" id="individual-form-message" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NOMBRES VISIBLES -->
+    <section class="public-section section-wrap" id="adhesions-llistat">
+      <div class="section-kicker"><span>04</span><span>LA XARXA</span></div>
+      <h2>Qui ja s’hi ha sumat</h2>
+
+      <div class="public-lists">
+        <div class="public-group">
+          <h3>Entitats</h3>
+          <ul class="entity-list" id="lista-entitats">
+            <li class="muted">Carregant...</li>
+          </ul>
+        </div>
+
+        <div class="public-group">
+          <h3>Persones</h3>
+          <ul class="entity-list" id="lista-persones">
+            <li class="muted">Carregant...</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted">Només es mostren les adhesions que han autoritzat la publicació del seu nom.</p>
+    </section>
+
+    <section class="closing-section">
+      <div class="container closing-inner"><span class="closing-star">✳</span>
+        <p>Una ciutat inclusiva és una ciutat on tothom hi pot arribar.</p>
+        <h2>Garantir la mobilitat<br><em>és garantir drets.</em></h2><a class="button button-light"
+          href="#adhereix">Adhereix-t'hi <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand footer-brand" href="#inici"><span class="brand-mark"
+          aria-hidden="true"><span></span><span></span><span></span></span><span>PLATAFORMA PEL<br><strong>DRET A LA
+            MOBILITAT</strong></span></a>
+      <p>Una iniciativa col·lectiva per una mobilitat accessible i una ciutat més justa.</p>
+      <a class="instagram-link" href="https://www.instagram.com/plataformapeldretalamobilitat/" target="_blank"
+        rel="noopener noreferrer">Segueix-nos a Instagram <span>↗</span></a>
+    </div>
+    <div class="container footer-bottom"><span>© Plataforma pel Dret a la Mobilitat</span><span><a
+          href="politica-privacitat.html">Política de privacitat</a> · <a href="#inici">Tornar a l'inici ↑</a></span>
+    </div>
+  </footer>
+</body>
+
+</html>

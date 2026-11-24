@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Política de privacitat de la Plataforma pel Dret a la Mobilitat. Informació sobre el tractament de dades personals i els drets de les persones usuàries.">
+  <meta name="robots" content="index, follow">
+
+  <title>Política de privacitat | Plataforma pel Dret a la Mobilitat</title>
+
+  <style>
+    /* =========================================
+       VARIABLES
+    ========================================= */
+
+    :root {
+      --forest: #173f31;
+      --forest-deep: #103126;
+      --green: #39775b;
+      --lime: #c8d96b;
+      --mint: #e8f0e8;
+      --paper: #f8f8f4;
+      --white: #ffffff;
+      --ink: #17231e;
+      --muted: #68766e;
+      --border: #dce4dc;
+
+      --radius: 18px;
+      --shadow: 0 8px 30px rgba(16, 49, 38, 0.06);
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--forest-deep);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 4px;
+    }
+
+    /* =========================================
+       MAIN CONTAINER
+    ========================================= */
+
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* =========================================
+       BACK BUTTON
+    ========================================= */
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 12px 22px;
+      margin-bottom: 35px;
+
+      background: var(--forest);
+      color: var(--white);
+
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+
+      border-radius: 50px;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .back-button:hover {
+      background: var(--green);
+      color: var(--white);
+      transform: translateX(-3px);
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(200, 217, 107, 0.12),
+          transparent 35%
+        ),
+        var(--forest);
+
+      color: var(--white);
+      padding: 65px 45px;
+      border-radius: 24px;
+      margin-bottom: 40px;
+    }
+
+    .hero-inner {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.3rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 1.08rem;
+      color: #dbe7dd;
+    }
+
+    .hero-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding: 10px 16px;
+
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px;
+
+      font-size: 0.85rem;
+      color: #e5eee6;
+    }
+
+    /* =========================================
+       LAYOUT
+    ========================================= */
+
+    .page-layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 35px;
+      align-items: start;
+    }
+
+    /* =========================================
+       INDEX
+    ========================================= */
+
+    .privacy-index {
+      position: sticky;
+      top: 30px;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+
+      box-shadow: var(--shadow);
+    }
+
+    .privacy-index h2 {
+      font-size: 0.95rem;
+      color: var(--forest);
+      margin-bottom: 16px;
+    }
+
+    .privacy-index ul {
+      list-style: none;
+    }
+
+    .privacy-index li + li {
+      margin-top: 8px;
+    }
+
+    .privacy-index a {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.5;
+      text-decoration: none;
+      padding: 5px 0;
+      transition: color 0.2s;
+    }
+
+    .privacy-index a:hover {
+      color: var(--green);
+    }
+
+    /* =========================================
+       CONTENT
+    ========================================= */
+
+    .privacy-content {
+      min-width: 0;
+    }
+
+    .privacy-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow);
+    }
+
+    .privacy-section {
+      scroll-margin-top: 30px;
+    }
+
+    .privacy-section + .privacy-section {
+      margin-top: 44px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .privacy-section h2 {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+
+      color: var(--forest);
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+
+      margin-bottom: 18px;
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 12px;
+      background: var(--mint);
+      color: var(--forest);
+
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .privacy-section p {
+      margin-bottom: 16px;
+      color: #46534b;
+    }
+
+    .privacy-section ul {
+      padding-left: 22px;
+      margin: 16px 0;
+      color: #46534b;
+    }
+
+    .privacy-section li {
+      padding-left: 4px;
+      margin-bottom: 9px;
+    }
+
+    .privacy-section li::marker {
+      color: var(--green);
+    }
+
+    .privacy-section strong {
+      color: var(--ink);
+    }
+
+    /* =========================================
+       INFO BOX
+    ========================================= */
+
+    .info-box {
+      background: var(--mint);
+      border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    .contact-card {
+      background: var(--forest);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 26px;
+      margin-top: 24px;
+    }
+
+    .contact-card h3 {
+      color: var(--lime);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: #e1ebe3;
+      margin-bottom: 8px;
+    }
+
+    .contact-card a {
+      color: var(--lime);
+      word-break: break-word;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 850px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .privacy-index {
+        position: static;
+      }
+
+      .privacy-index ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px 16px;
+      }
+
+      .privacy-index li + li {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-container {
+        padding: 20px 15px 50px;
+      }
+
+      .back-button {
+        margin-bottom: 24px;
+      }
+
+      .hero {
+        padding: 42px 24px;
+        border-radius: 18px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.3px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .page-layout {
+        gap: 18px;
+      }
+
+      .privacy-card {
+        padding: 24px 18px;
+      }
+
+      .privacy-section h2 {
+        font-size: 1.25rem;
+        gap: 10px;
+      }
+
+      .section-number {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+      }
+
+      .privacy-index ul {
+        grid-template-columns: 1fr;
+      }
+
+      .privacy-section + .privacy-section {
+        margin-top: 32px;
+        padding-top: 30px;
+      }
+
+      .contact-card {
+        padding: 22px 18px;
+      }
+    }
+
+    /* =========================================
+       REDUCED MOTION
+    ========================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <main class="page-container">
+
+    <!-- ÚNICO BOTÓ DE RETORN -->
+    <a href="index.html" class="back-button">
+      ← Tornar
+    </a>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+
+        <p class="eyebrow">Transparència i confiança</p>
+
+        <h1>Política de privacitat</h1>
+
+        <p>
+          La privacitat és un dret fonamental. En aquesta pàgina t'expliquem
+          com tractem les dades personals, per a què les utilitzem i com pots
+          exercir els teus drets.
+        </p>
+
+        <div class="hero-meta">
+          <span>🔒</span>
+          <span>Protecció de dades personals</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTINGUT -->
+    <div class="page-layout">
+
+      <!-- ÍNDEX -->
+      <aside class="privacy-index" aria-label="Índex de la política de privacitat">
+
+        <h2>En aquesta pàgina</h2>
+
+        <ul>
+          <li><a href="#responsable">1. Responsable</a></li>
+          <li><a href="#dades">2. Dades que recollim</a></li>
+          <li><a href="#finalitats">3. Finalitats</a></li>
+          <li><a href="#base-legal">4. Base jurídica</a></li>
+          <li><a href="#conservacio">5. Conservació</a></li>
+          <li><a href="#destinataris">6. Destinataris</a></li>
+          <li><a href="#publicacio">7. Dades públiques</a></li>
+          <li><a href="#drets">8. Els teus drets</a></li>
+          <li><a href="#seguretat">9. Seguretat</a></li>
+          <li><a href="#cookies">10. Cookies</a></li>
+          <li><a href="#menors">11. Menors d'edat</a></li>
+          <li><a href="#reclamacions">12. Reclamacions</a></li>
+          <li><a href="#canvis">13. Modificacions</a></li>
+        </ul>
+
+      </aside>
+
+      <!-- TEXT LEGAL -->
+      <div class="privacy-content">
+        <article class="privacy-card">
+
+          <!-- 1. RESPONSABLE -->
+          <section class="privacy-section" id="responsable">
+
+            <h2>
+              <span class="section-number">01</span>
+              Responsable del tractament
+            </h2>
+
+            <p>
+              El responsable del tractament de les dades personals recollides
+              a través d'aquest lloc web és la Plataforma pel Dret a la Mobilitat.
+            </p>
+
+            <div class="info-box">
+              <p><strong>Responsable:</strong> Plataforma pel Dret a la Mobilitat</p>
+              <p><strong>Adreça:</strong> [Afegir adreça de contacte]</p>
+              <p>
+                <strong>Correu electrònic:</strong>
+                <a href="mailto:CORREU@EXEMPLE.CAT">[Afegir correu electrònic]</a>
+              </p>
+            </div>
+
+            <p>
+              El responsable es compromet a tractar les dades personals de manera
+              lícita, lleial, transparent i adequada a les finalitats per a les
+              quals han estat recollides, d'acord amb la normativa vigent en
+              matèria de protecció de dades.
+            </p>
+
+          </section>
+
+          <!-- 2. DADES -->
+          <section class="privacy-section" id="dades">
+
+            <h2>
+              <span class="section-number">02</span>
+              Dades personals que recollim
+            </h2>
+
+            <p>
+              A través dels formularis d'adhesió i dels canals de contacte del
+              lloc web, podem recollir les dades personals següents, segons el
+              tipus de participació:
+            </p>
+
+            <ul>
+              <li>Nom i cognoms de les persones adherides.</li>
+              <li>Adreça electrònica de contacte.</li>
+              <li>Nom de l'entitat, organització o col·lectiu.</li>
+              <li>Dades de contacte de la persona representant de l'entitat.</li>
+              <li>Informació relacionada amb l'adhesió al manifest.</li>
+              <li>Preferències de visibilitat de l'adhesió, si s'ofereixen.</li>
+              <li>Informació que la persona usuària decideixi facilitar voluntàriament.</li>
+            </ul>
+
+            <p>
+              No demanem dades personals que no siguin necessàries per a les
+              finalitats descrites en aquesta política.
+            </p>
+
+          </section>
+
+          <!-- 3. FINALITATS -->
+          <section class="privacy-section" id="finalitats">
+
+            <h2>
+              <span class="section-number">03</span>
+              Per a què utilitzem les dades
+            </h2>
+
+            <p>
+              Les dades personals es poden utilitzar per a les finalitats següents:
+            </p>
+
+            <ul>
+              <li>Gestionar les adhesions al manifest pel dret a la mobilitat.</li>
+              <li>Registrar i administrar les adhesions de persones i entitats.</li>
+              <li>Contactar amb les persones adherides quan sigui necessari.</li>
+              <li>Informar sobre activitats, iniciatives i comunicacions relacionades amb la plataforma.</li>
+              <li>Mostrar públicament les adhesions quan la persona o entitat ho hagi autoritzat expressament.</li>
+              <li>Gestionar consultes, sol·licituds o incidències enviades a través del web.</li>
+              <li>Mantenir, protegir i millorar el funcionament i la seguretat del lloc web.</li>
+            </ul>
+
+            <p>
+              Les dades no s'utilitzaran per a finalitats incompatibles amb
+              aquelles per a les quals s'han recollit.
+            </p>
+
+          </section>
+
+          <!-- 4. BASE JURÍDICA -->
+          <section class="privacy-section" id="base-legal">
+
+            <h2>
+              <span class="section-number">04</span>
+              Base jurídica del tractament
+            </h2>
+
+            <p>
+              El tractament de les dades personals es fonamenta, segons la
+              finalitat concreta, en les bases jurídiques previstes a l'article 6
+              del Reglament general de protecció de dades (RGPD:
+              Reglament UE 2016/679):
+            </p>
+
+            <ul>
+              <li>
+                <strong>Consentiment:</strong> quan la persona facilita
+                voluntàriament les seves dades per adherir-se al manifest,
+                autoritzar comunicacions o permetre la publicació de les seves dades.
+              </li>
+
+              <li>
+                <strong>Interès legítim:</strong> quan sigui aplicable, per
+                garantir la gestió, el manteniment, la seguretat i el funcionament
+                de la plataforma, sempre que no prevalguin els drets i llibertats
+                de les persones afectades.
+              </li>
+
+              <li>
+                <strong>Obligació legal:</strong> quan sigui necessari complir
+                obligacions legalment exigibles al responsable del tractament.
+              </li>
+            </ul>
+
+            <p>
+              Quan el tractament es basi en el consentiment, aquest es podrà
+              retirar en qualsevol moment, sense que això afecti la licitud del
+              tractament efectuat abans de la retirada.
+            </p>
+
+          </section>
+
+          <!-- 5. CONSERVACIÓ -->
+          <section class="privacy-section" id="conservacio">
+
+            <h2>
+              <span class="section-number">05</span>
+              Conservació de les dades
+            </h2>
+
+            <p>
+              Les dades personals es conservaran durant el temps necessari per
+              complir les finalitats per a les quals s'han recollit.
+            </p>
+
+            <p>
+              En particular, es conservaran mentre l'adhesió es mantingui vigent,
+              mentre sigui necessari gestionar la participació o les comunicacions
+              autoritzades, o mentre existeixin obligacions legals que en
+              requereixin la conservació.
+            </p>
+
+            <p>
+              Quan les dades deixin de ser necessàries, es procedirà a suprimir-les
+              o, si escau, a bloquejar-les durant els terminis legalment previstos.
+            </p>
+
+          </section>
+
+          <!-- 6. DESTINATARIS -->
+          <section class="privacy-section" id="destinataris">
+
+            <h2>
+              <span class="section-number">06</span>
+              Destinataris i tercers
+            </h2>
+
+            <p>
+              Les dades personals no es vendran, llogaran ni cediran a tercers
+              amb finalitats comercials.
+            </p>
+
+            <p>
+              Podran tenir accés a les dades els proveïdors de serveis
+              tecnològics que siguin necessaris per al funcionament del web,
+              com ara serveis d'allotjament web, manteniment, correu electrònic
+              o infraestructura informàtica, sempre que sigui necessari i amb les
+              garanties legals corresponents.
+            </p>
+
+            <p>
+              Aquestes persones o empreses actuaran, quan correspongui, com a
+              encarregades del tractament, seguint les instruccions del responsable
+              i les obligacions establertes per la normativa de protecció de dades.
+            </p>
+
+            <p>
+              Les dades només es comunicaran a tercers quan existeixi una base
+              jurídica que ho permeti o ho exigeixi.
+            </p>
+
+            <p>
+              Si algun proveïdor tracta dades fora de l'Espai Econòmic Europeu,
+              aquesta transferència es realitzarà únicament quan es compleixin les
+              garanties exigides per la normativa aplicable.
+            </p>
+
+          </section>
+
+          <!-- 7. PUBLICACIÓ -->
+          <section class="privacy-section" id="publicacio">
+
+            <h2>
+              <span class="section-number">07</span>
+              Publicació de les adhesions
+            </h2>
+
+            <p>
+              El web pot disposar d'un espai públic on es mostrin les adhesions
+              al manifest, amb l'objectiu de visibilitzar el suport de persones,
+              entitats i col·lectius a la iniciativa.
+            </p>
+
+            <p>
+              La publicació de noms de persones, entitats o altres dades
+              identificatives es realitzarà únicament quan existeixi una autorització
+              o una base jurídica adequada per fer-ho.
+            </p>
+
+            <div class="info-box">
+              <p>
+                <strong>La privacitat és una elecció.</strong> La participació
+                o adhesió no ha de comportar necessàriament la publicació de
+                les dades personals. Les persones adherides han de poder conèixer
+                quines dades seran visibles públicament i, quan correspongui,
+                escollir si autoritzen aquesta publicació.
+              </p>
+            </div>
+
+            <p>
+              Si vols retirar una adhesió pública o modificar la visibilitat de
+              les teves dades, pots contactar amb nosaltres a través de l'adreça
+              de correu indicada en aquesta política.
+            </p>
+
+          </section>
+
+          <!-- 8. DRETS -->
+          <section class="privacy-section" id="drets">
+
+            <h2>
+              <span class="section-number">08</span>
+              Drets de les persones usuàries
+            </h2>
+
+            <p>
+              D'acord amb la normativa de protecció de dades, pots exercir
+              els drets següents sobre les teves dades personals:
+            </p>
+
+            <ul>
+              <li><strong>Accés:</strong> conèixer quines dades personals tractem sobre tu.</li>
+              <li><strong>Rectificació:</strong> corregir dades inexactes o incompletes.</li>
+              <li><strong>Supressió:</strong> sol·licitar que eliminem les teves dades quan sigui procedent.</li>
+              <li><strong>Oposició:</strong> oposar-te a determinats tractaments.</li>
+              <li><strong>Limitació:</strong> sol·licitar que limitem el tractament en els supòsits legalment previstos.</li>
+              <li><strong>Portabilitat:</strong> rebre les dades que ens has facilitat en els casos en què aquest dret sigui aplicable.</li>
+              <li><strong>Retirada del consentiment:</strong> retirar en qualsevol moment el consentiment que hagis donat.</li>
+            </ul>
+
+            <p>
+              Per exercir aquests drets, pots enviar una sol·licitud al responsable
+              del tractament a través del correu electrònic de contacte, indicant
+              el dret que vols exercir.
+            </p>
+
+            <p>
+              Podrem demanar informació addicional per verificar la teva identitat
+              quan sigui estrictament necessari per protegir les teves dades.
+            </p>
+
+            <div class="contact-card">
+              <h3>Exerceix els teus drets</h3>
+
+              <p>Si vols consultar, modificar o eliminar les teves dades:</p>
+
+              <p>
+                <a href="mailto:CORREU@EXEMPLE.CAT">
+                  [Afegir correu electrònic de contacte]
+                </a>
+              </p>
+
+              <p>
+                Assumpte recomanat:
+                <strong>Protecció de dades personals</strong>
+              </p>
+            </div>
+
+          </section>
+
+          <!-- 9. SEGURETAT -->
+          <section class="privacy-section" id="seguretat">
+
+            <h2>
+              <span class="section-number">09</span>
+              Seguretat i confidencialitat
+            </h2>
+
+            <p>
+              El responsable adopta mesures tècniques i organitzatives raonables
+              per protegir les dades personals davant accessos no autoritzats,
+              pèrdues, alteracions, divulgacions indegudes o destrucció.
+            </p>
+
+            <p>
+              Aquestes mesures es revisen i s'actualitzen en funció de les
+              necessitats, els riscos i els recursos disponibles.
+            </p>
+
+            <p>
+              Tot i això, cap sistema de transmissió o emmagatzematge de dades
+              a través d'Internet pot garantir una seguretat absoluta.
+            </p>
+
+          </section>
+
+          <!-- 10. COOKIES -->
+          <section class="privacy-section" id="cookies">
+
+            <h2>
+              <span class="section-number">10</span>
+              Cookies i tecnologies similars
+            </h2>
+
+            <p>
+              Aquest lloc web pot utilitzar cookies o tecnologies similars per
+              garantir el seu funcionament, recordar preferències o obtenir
+              informació estadística sobre la navegació, si aquestes funcionalitats
+              estan habilitades.
+            </p>
+
+            <p>
+              Les cookies estrictament necessàries per al funcionament del web
+              poden utilitzar-se d'acord amb la normativa aplicable.
+            </p>
+
+            <p>
+              Les cookies analítiques, publicitàries o altres tecnologies no
+              necessàries no s'activaran sense el consentiment previ de la
+              persona usuària, quan aquest sigui legalment exigible.
+            </p>
+
+            <p>
+              Pots consultar, configurar o retirar el consentiment de les cookies
+              a través del sistema de configuració de cookies del web, si està
+              disponible, o mitjançant les opcions del teu navegador.
+            </p>
+
+            <p>
+              La configuració del navegador permet bloquejar o eliminar cookies,
+              però això pot afectar el funcionament d'algunes funcionalitats.
+            </p>
+
+          </section>
+
+          <!-- 11. MENORS -->
+          <section class="privacy-section" id="menors">
+
+            <h2>
+              <span class="section-number">11</span>
+              Protecció de les dades de menors
+            </h2>
+
+            <p>
+              Aquest lloc web no està destinat a recollir dades personals de
+              menors sense les garanties i autoritzacions exigides per la
+              legislació aplicable.
+            </p>
+
+            <p>
+              Si detectem que s'han recollit dades personals d'un menor sense
+              les garanties necessàries, adoptarem les mesures adequades per
+              revisar la situació i, si correspon, eliminar-les.
+            </p>
+
+          </section>
+
+          <!-- 12. RECLAMACIONS -->
+          <section class="privacy-section" id="reclamacions">
+
+            <h2>
+              <span class="section-number">12</span>
+              Reclamacions davant l'autoritat de control
+            </h2>
+
+            <p>
+              Si consideres que el tractament de les teves dades personals no
+              s'ajusta a la normativa, pots contactar amb nosaltres per intentar
+              resoldre la situació.
+            </p>
+
+            <p>
+              També tens dret a presentar una reclamació davant l'autoritat
+              competent en matèria de protecció de dades.
+            </p>
+
+            <p>
+              A Espanya, l'autoritat de control és l'Agència Espanyola de
+              Protecció de Dades (AEPD).
+            </p>
+
+            <p>
+              <a
+                href="https://www.aepd.es/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                www.aepd.es
+              </a>
+            </p>
+
+          </section>
+
+          <!-- 13. MODIFICACIONS -->
+          <section class="privacy-section" id="canvis">
+
+            <h2>
+              <span class="section-number">13</span>
+              Modificacions de la política de privacitat
+            </h2>
+
+            <p>
+              Aquesta política de privacitat pot actualitzar-se per adaptar-se
+              a canvis normatius, modificacions del lloc web o canvis en les
+              activitats de tractament de dades.
+            </p>
+
+            <p>
+              Les modificacions es publicaran en aquesta mateixa pàgina.
+              Recomanem revisar-la periòdicament per estar al corrent de
+              qualsevol actualització.
+            </p>
+
+            <div class="info-box">
+              <p>
+                <strong>Última actualització:</strong>
+                21 de novembre de 2026.
+              </p>
+            </div>
+
+          </section>
+
+        </article>
+      </div>
+
+  </main>
+
+</body>
+</html>
