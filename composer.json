@@ -1,0 +1,7 @@
+{
+    "require": {
+        "google/apiclient": "^2.20",
+        "phpmailer/phpmailer": "^7.2",
+        "vlucas/phpdotenv": "^5.8"
+    }
+}
