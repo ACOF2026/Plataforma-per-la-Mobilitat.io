@@ -34,8 +34,8 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-cache, must-revalidate');
 
 // ========== CONFIGURACIÓN ==========
-$spreadsheetId = '1KpDNdgOdvxmdde1WLvNiQXbfq31gtQoJR086HOe5ENk';
-$sheetName     = 'Hoja 1';
+$spreadsheetId = '1c2-jfz1TotTV380NKDok65rn_oRxZJCI8uml2zBv-1Y';
+$sheetName     = 'Full 1';
 
 // ========== CARGA DE CREDENCIALES ==========
 

@@ -34,8 +34,8 @@ use Google\Service\Sheets\ClearValuesRequest;
 header('Content-Type: application/json; charset=utf-8');
 
 // ================= CONFIGURACIÓN =================
-$spreadsheetId = envValue('SPREADSHEET_ID', '1KpDNdgOdvxmdde1WLvNiQXbfq31gtQoJR086HOe5ENk');
-$sheetName = 'Hoja 1';              // Adhesiones confirmadas
+$spreadsheetId = envValue('SPREADSHEET_ID', '1c2-jfz1TotTV380NKDok65rn_oRxZJCI8uml2zBv-1Y');
+$sheetName = 'Full 1';              // Adhesiones confirmadas
 $pendingSheetName = 'Pendientes';   // Pestaña de verificaciones pendientes
 
 // ========== CARGA DE CREDENCIALES ==========

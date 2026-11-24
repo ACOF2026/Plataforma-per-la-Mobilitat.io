@@ -31,8 +31,8 @@ use Google\Service\Sheets;
 use Google\Service\Sheets\ValueRange;
 use Google\Service\Sheets\ClearValuesRequest;
 
-$spreadsheetId = envValue('SPREADSHEET_ID', '1KpDNdgOdvxmdde1WLvNiQXbfq31gtQoJR086HOe5ENk');
-$sheetName = 'Hoja 1';
+$spreadsheetId = envValue('SPREADSHEET_ID', '1c2-jfz1TotTV380NKDok65rn_oRxZJCI8uml2zBv-1Y');
+$sheetName = 'Full 1';
 $pendingSheetName = 'Pendientes';
 
 function page(string $title, string $message, bool $ok): void {
