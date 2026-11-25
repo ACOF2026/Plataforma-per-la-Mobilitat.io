@@ -35,16 +35,69 @@ $spreadsheetId = envValue('SPREADSHEET_ID', '1c2-jfz1TotTV380NKDok65rn_oRxZJCI8u
 $sheetName = 'Full 1';
 $pendingSheetName = 'Pendientes';
 
+/**
+ * Página de resultado de la verificación.
+ * Mismo sistema visual que la web: Montserrat, rojo/negro/gris y la línea de
+ * metro con 5 estaciones del logotipo.
+ */
 function page(string $title, string $message, bool $ok): void {
-    $color = $ok ? '#18794e' : '#b42318';
-    echo '<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-       . '<title>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</title>'
-       . '<body style="margin:0;background:#f4f6f8;font-family:Arial,sans-serif;color:#263445;display:grid;min-height:100vh;place-items:center">'
-       . '<main style="background:#fff;max-width:560px;margin:24px;padding:36px;border-radius:14px;box-shadow:0 8px 30px #0001;text-align:center">'
-       . '<h1 style="color:' . $color . '">' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h1>'
-       . '<p style="line-height:1.7">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</p>'
-       . '<a href="index.html" style="display:inline-block;margin-top:16px;background:#263b50;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none">Volver a la página</a>'
-       . '</main></body></html>';
+    $css = <<<'CSS'
+:root{--red:#d80000;--black:#0b0b0b;--grey:#555;--soft:#f4f4f4;--line:#e2e2e2;
+  --brand-bar:linear-gradient(90deg,#d80000 0 20%,#0b0b0b 20% 40%,#555 40% 60%,#0b0b0b 60% 80%,#d80000 80% 100%)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--soft);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;color:#161616;-webkit-font-smoothing:antialiased}
+body::before{content:"";display:block;height:6px;background:var(--brand-bar)}
+.wrap{flex:1;display:grid;place-items:center;padding:24px}
+main{width:100%;max-width:560px;background:#fff;border-radius:12px;border-top:6px solid var(--accent);
+  box-shadow:0 16px 44px rgba(0,0,0,.09);padding:40px 36px 34px;text-align:center}
+main.ok{--accent:var(--black)}
+main.error{--accent:var(--red)}
+.logo{display:block;height:54px;width:auto;margin:0 auto 28px}
+.status{width:68px;height:68px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;
+  border:8px solid var(--accent);color:var(--accent);font:800 26px "Montserrat",system-ui,sans-serif}
+h1{margin:0 0 14px;font:800 clamp(26px,5vw,34px)/1.15 "Montserrat",system-ui,sans-serif;letter-spacing:-.035em;color:var(--black)}
+main.error h1{color:var(--red)}
+p{margin:0;font-size:16px;line-height:1.7;color:#3d3d3d}
+.btn{display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:10px 24px 10px 12px;background:var(--black);color:#fff;
+  font:700 12px "Montserrat",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:999px;
+  transition:background .25s ease,transform .25s ease}
+.btn::before{content:"←";display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font-size:14px;letter-spacing:0}
+.btn:hover{background:var(--red);transform:translateX(-3px)}
+.btn:hover::before{background:#fff;color:var(--red)}
+.btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.line{height:24px;margin:34px 0 0;background:
+  radial-gradient(circle,#fff 0 5px,#d80000 5.5px 10px,transparent 10.5px) left center/24px 24px no-repeat,
+  radial-gradient(circle,#fff 0 5px,#0b0b0b 5.5px 10px,transparent 10.5px) 25% center/24px 24px no-repeat,
+  radial-gradient(circle,#fff 0 5px,#555 5.5px 10px,transparent 10.5px) 50% center/24px 24px no-repeat,
+  radial-gradient(circle,#fff 0 5px,#0b0b0b 5.5px 10px,transparent 10.5px) 75% center/24px 24px no-repeat,
+  radial-gradient(circle,#fff 0 5px,#d80000 5.5px 10px,transparent 10.5px) right center/24px 24px no-repeat,
+  linear-gradient(#d80000,#d80000) center/calc(100% - 24px) 5px no-repeat}
+@media (max-width:480px){main{padding:32px 22px 28px}.logo{height:46px}}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+CSS;
+
+    $safeTitle   = htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
+    $safeMessage = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+    $state       = $ok ? 'ok' : 'error';
+    $icon        = $ok ? '✓' : '!';
+
+    echo '<!doctype html><html lang="es"><head><meta charset="utf-8">'
+       . '<meta name="viewport" content="width=device-width,initial-scale=1">'
+       . '<title>' . $safeTitle . ' | Plataforma pel Dret a la Mobilitat</title>'
+       . '<link rel="icon" type="image/png" href="img/logo.png">'
+       . '<link rel="preconnect" href="https://fonts.googleapis.com">'
+       . '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+       . '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">'
+       . '<style>' . $css . '</style></head>'
+       . '<body><div class="wrap"><main class="' . $state . '">'
+       . '<img class="logo" src="img/logo.png" alt="Plataforma pel Dret a la Mobilitat">'
+       . '<div class="status" aria-hidden="true">' . $icon . '</div>'
+       . '<h1>' . $safeTitle . '</h1>'
+       . '<p>' . $safeMessage . '</p>'
+       . '<a class="btn" href="index.html">Volver a la página</a>'
+       . '<div class="line" aria-hidden="true"></div>'
+       . '</main></div></body></html>';
 }
 
 // ========== CARGA DE CREDENCIALES ==========
